@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: var(--bg-main);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-bg-hover: var(--bg-hover);
+  --color-primary: var(--primary);
+  --color-text-dark: var(--text-dark);
+  --color-text-light: var(--text-light);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border-color: var(--border-color);
+  --color-nav-active: var(--nav-active);
+  --color-danger: var(--danger);
+  --shadow-card: var(--card-shadow);
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius-card: 8px;
+}
+
+@layer base {
+  :root {
+    --bg-main: #f4f7f9;
+    --sidebar-bg: #ffffff;
+    --bg-hover: rgba(0, 0, 0, 0.03);
+    --primary: #0052cc;
+    --text-dark: #172b4d;
+    --text-light: #6b778c;
+    --success: #36b37e;
+    --warning: #ffab00;
+    --border-color: #dfe1e6;
+    --nav-active: #ebf2ff;
+    --danger: #eb4034;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  .dark {
+    --bg-main: #000000;
+    --sidebar-bg: rgba(255, 255, 255, 0.04);
+    --bg-hover: rgba(255, 255, 255, 0.08);
+    --primary: #00f3ff;
+    --text-dark: #ffffff;
+    --text-light: #a0a0a0;
+    --success: #39ff14;
+    --warning: #ffea00;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --nav-active: rgba(0, 243, 255, 0.1);
+    --danger: #ff003c;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  body {
+    @apply bg-bg-main text-text-dark antialiased transition-colors duration-300;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .bg-sidebar-bg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
